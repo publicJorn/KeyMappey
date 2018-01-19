@@ -1,0 +1,49 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "description": "KeyMappey",
+  "author": {
+    "name": "Jorn Luiten",
+    "url": "https://github.com/publicJorn/"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "yarn install & webpack-dev-server",
+    "build": "webpack -p",
+    "test": "standard"
+  },
+  "standard": {
+    "ignore": [
+      "dist/"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "classnames": "^2.2.5",
+    "immutability-helper": "^2.6.2",
+    "lodash": "^4.17.4",
+    "normalizr": "^3.2.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "shim-keyboard-event-key": "^1.0.0",
+    "styled-components": "^2.4.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^2.30.1",
+    "standard": "^10.0.3",
+    "style-loader": "^0.19.1",
+    "svg-react-loader": "^0.4.5",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.7"
+  }
+}

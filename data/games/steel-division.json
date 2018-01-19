@@ -1,0 +1,60 @@
+{
+  "game": "Steel Division",
+  "bindingSections": [
+    {
+      "name": "general",
+      "bindings": [
+        {
+          "longName": "Move camera up",
+          "shortName": "Cam up",
+          "defaultKey": "w"
+        },
+        {
+          "longName": "Move camera down",
+          "shortName": "Cam down",
+          "defaultKey": "s"
+        },
+        {
+          "longName": "Move camera left",
+          "shortName": "Cam left",
+          "defaultKey": "a"
+        },
+        {
+          "longName": "Move camera right",
+          "shortName": "Cam right",
+          "defaultKey": "d"
+        },
+        {
+          "longName": "Deploy menu",
+          "shortName": "Deploy",
+          "defaultKey": "~"
+        },
+        {
+          "longName": "Attack move",
+          "shortName": "Attack",
+          "defaultKey": "q"
+        },
+        {
+          "longName": "Reverse move",
+          "shortName": "Reverse",
+          "defaultKey": "j"
+        },
+        {
+          "longName": "Stop unit",
+          "shortName": "Stop",
+          "defaultKey": "e"
+        },
+        {
+          "longName": "Move fast",
+          "shortName": "Fast",
+          "defaultKey": "f"
+        },
+        {
+          "longName": "Fire at position",
+          "shortName": "Fire pos",
+          "defaultKey": "t"
+        }
+      ]
+    }
+  ]
+}
