@@ -1,7 +1,10 @@
+import update from 'immutability-helper'
+
 import {
   FETCH_BINDINGS,
   FETCH_BINDINGS_ERROR,
-  BINDINGS_FETCHED
+  BINDINGS_FETCHED,
+  SELECT_BINDING
 } from './bindingActions'
 import createReducer from 'src/utils/createReducer'
 import normalize from './normalizeGameData'
@@ -37,5 +40,25 @@ export default createReducer(defaultBindingState, {
       error: '',
       gameData
     }
+  },
+
+  [SELECT_BINDING] (state, action) {
+    const { longName } = action
+    const previouslySelected = getCurrentlySelectedBinding(state)
+    const operation = {
+      gameData: { bindings: {
+        [longName]: { selected: { $set: true } }
+      } }
+    }
+
+    if (previouslySelected) {
+      // When previously selected binding is clicked, it will simply unselect negating the $set above
+      operation.gameData.bindings[previouslySelected.longName] = { $unset: ['selected'] }
+    }
+    return update(state, operation)
   }
 })
+
+function getCurrentlySelectedBinding (state) {
+  return Object.values(state.gameData.bindings).find((binding) => binding.selected)
+}

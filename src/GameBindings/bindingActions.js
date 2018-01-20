@@ -4,6 +4,7 @@ import { dataSource } from 'src/constants'
 export const FETCH_BINDINGS = 'FETCH_BINDINGS.GameBindings'
 export const FETCH_BINDINGS_ERROR = 'FETCH_BINDINGS_ERROR.GameBindings'
 export const BINDINGS_FETCHED = 'BINDINGS_FETCHED.GameBindings'
+export const SELECT_BINDING = 'SELECT_BINDING.GameBindings'
 
 function notifyFetching () {
   return {
@@ -36,5 +37,12 @@ export function fetchGameData (game) {
     return axios.get(`${dataSource}/games/${game}.json`)
       .then((response) => dispatch(handleReceiveGameData(response)))
       .catch((eObj) => dispatch(handleError(eObj)))
+  }
+}
+
+export function selectBinding (longName) {
+  return {
+    type: SELECT_BINDING,
+    longName
   }
 }

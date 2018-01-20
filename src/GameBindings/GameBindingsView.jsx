@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import isEmpty from 'lodash/isEmpty'
 
 import Error from 'src/genericComponents/Error'
-import Binding from './Binding'
+import Binding from './Binding/Binding'
 
-const GameBindingsComponent = ({ className, loading, gameData, error, onSelectBinding }) => {
+const GameBindingsComponent = ({ className, loading, gameData, error }) => {
   const cn = className + (loading ? ' loading' : '')
   const getBinding = (id) => gameData.bindings[id]
   // Fall back to the first listed section if "default" doesn't exist
@@ -21,7 +21,7 @@ const GameBindingsComponent = ({ className, loading, gameData, error, onSelectBi
             { // For now we only support the "default" bindingSection
               getDefaultSection().bindings.map((bindingId, i) => {
                 const binding = getBinding(bindingId)
-                return <Binding key={binding.longName} {...binding} onSelectBinding={onSelectBinding} />
+                return <Binding key={binding.longName} {...binding} />
               })
             }
           </tbody>

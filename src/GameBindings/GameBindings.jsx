@@ -1,18 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import update from 'immutability-helper'
 
-import bindAll from 'src/utils/bindAll'
 import GameBindingsView from './GameBindingsView'
 import { fetchGameData } from './bindingActions'
 
 class GameBindingsContainer extends Component {
-  constructor (props) {
-    super(props)
-
-    bindAll(this, 'onSelectBinding', 'getSelectedBinding')
-  }
-
   componentDidMount () {
     if (this.props.game) {
       this.props.fetchGameData(this.props.game)
@@ -27,27 +19,7 @@ class GameBindingsContainer extends Component {
 
   render () {
     const { loading, error, gameData } = this.props
-    return <GameBindingsView {...{ loading, error, gameData }} onSelectBinding={this.onSelectBinding} />
-  }
-
-  onSelectBinding (evt, longName) {
-    const operation = {
-      gameData: { bindings: {
-        [longName]: { selected: { $set: true } }
-      } }
-    }
-
-    const previouslySelected = this.getSelectedBinding()
-    if (previouslySelected) {
-      // When previously selected binding is clicked, it will simply unselect negating the $set above
-      operation.gameData.bindings[previouslySelected.longName] = { $unset: ['selected'] }
-    }
-
-    this.setState(update(this.state, operation))
-  }
-
-  getSelectedBinding () {
-    return Object.values(this.state.gameData.bindings).find((binding) => binding.selected)
+    return <GameBindingsView {...{ loading, error, gameData }} />
   }
 }
 

@@ -19,10 +19,15 @@ const Key = styled.td`
   }
 `
 
-const Binding = ({ className, longName, boundKey, selected, onSelectBinding }) => {
+const Binding = ({ className, longName, boundKey, selected, selectBinding }) => {
   const cn = classNames(className, { selected })
+  const handleClick = (evt) => {
+    evt.preventDefault()
+    return selectBinding(longName)
+  }
+
   return (
-    <tr className={cn} onClick={(evt) => onSelectBinding(evt, longName)}>
+    <tr className={cn} onClick={handleClick}>
       <Name>{longName}</Name>
       <Key>{boundKey}</Key>
     </tr>
