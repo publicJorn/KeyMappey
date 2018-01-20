@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import GameBindingsView from './GameBindingsView'
-import { fetchGameData } from './bindingActions'
+import { fetchGameData } from './bindingsActions'
 
 class GameBindingsContainer extends Component {
   componentDidMount () {

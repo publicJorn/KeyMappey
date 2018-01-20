@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunk from 'redux-thunk'
 
-import bindings from './GameBindings/bindingReducer'
+import bindings from './GameBindings/bindingsReducer'
 
 const rootReducer = combineReducers({
   bindings

@@ -15,7 +15,7 @@ const Key = styled.td`
   border: 1px solid #ccc;
 
   .selected > & {
-    border-color: cyan;
+    border-color: hotpink;
   }
 `
 
@@ -53,6 +53,6 @@ export default styled(Binding)`
   cursor: pointer;
 
   &.selected {
-    color: cyan;
+    color: hotpink;
   }
 `

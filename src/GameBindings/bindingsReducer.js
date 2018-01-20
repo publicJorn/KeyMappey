@@ -5,7 +5,7 @@ import {
   FETCH_BINDINGS_ERROR,
   BINDINGS_FETCHED,
   SELECT_BINDING
-} from './bindingActions'
+} from './bindingsActions'
 import createReducer from 'src/utils/createReducer'
 import normalize from './normalizeGameData'
 
