@@ -23,7 +23,7 @@ const Binding = ({ className, longName, boundKey, selected, selectBinding }) => 
   const cn = classNames(className, { selected })
   const handleClick = (evt) => {
     evt.preventDefault()
-    return selectBinding(longName)
+    selectBinding(longName)
   }
 
   return (

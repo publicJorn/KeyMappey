@@ -44,21 +44,12 @@ export default createReducer(defaultBindingState, {
 
   [SELECT_BINDING] (state, action) {
     const { longName } = action
-    const previouslySelected = getCurrentlySelectedBinding(state)
     const operation = {
-      gameData: { bindings: {
-        [longName]: { selected: { $set: true } }
-      } }
-    }
-
-    if (previouslySelected) {
-      // When previously selected binding is clicked, it will simply unselect negating the $set above
-      operation.gameData.bindings[previouslySelected.longName] = { $unset: ['selected'] }
+      selectedBinding: {
+        // Set new longName, or deselect if it was already selected
+        $set: (state.selectedBinding !== longName) ? longName : ''
+      }
     }
     return update(state, operation)
   }
 })
-
-function getCurrentlySelectedBinding (state) {
-  return Object.values(state.gameData.bindings).find((binding) => binding.selected)
-}
