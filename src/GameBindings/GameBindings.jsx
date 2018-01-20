@@ -1,44 +1,65 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import { connect } from 'react-redux'
+import update from 'immutability-helper'
 
-import GameBindingsContainer from './GameBindingsContainer'
+import bindAll from 'src/utils/bindAll'
+import GameBindingsView from './GameBindingsView'
+import { fetchGameData } from './bindingActions'
 
-const games = ['Steel division']
-
-class GameBindingArea extends Component {
+class GameBindingsContainer extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      game: 'steel-division'
+
+    bindAll(this, 'onSelectBinding', 'getSelectedBinding')
+  }
+
+  componentDidMount () {
+    if (this.props.game) {
+      this.props.fetchGameData(this.props.game)
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.game !== this.props.game) {
+      this.props.fetchGameData(nextProps.game)
     }
   }
 
   render () {
-    const { className } = this.props
-
-    return (
-      <div className={className}>
-        <h2>Map your key bindings:</h2>
-
-        <select onChange={this.onSelectGame.bind(this)} defaultValue={this.state.game}>
-          <option value='' disabled>Select game</option>
-          {games.map((game) => {
-            const gameId = game.toLowerCase().replace(/ /, '-')
-            return <option key={gameId} value={gameId}>{game}</option>
-          })}
-        </select>
-
-        <hr />
-        <GameBindingsContainer game={this.state.game} />
-      </div>
-    )
+    const { loading, error, gameData } = this.props
+    return <GameBindingsView {...{ loading, error, gameData }} onSelectBinding={this.onSelectBinding} />
   }
 
-  onSelectGame (evt) {
-    this.setState({ ...this.state, game: evt.target.value })
+  onSelectBinding (evt, longName) {
+    const operation = {
+      gameData: { bindings: {
+        [longName]: { selected: { $set: true } }
+      } }
+    }
+
+    const previouslySelected = this.getSelectedBinding()
+    if (previouslySelected) {
+      // When previously selected binding is clicked, it will simply unselect negating the $set above
+      operation.gameData.bindings[previouslySelected.longName] = { $unset: ['selected'] }
+    }
+
+    this.setState(update(this.state, operation))
+  }
+
+  getSelectedBinding () {
+    return Object.values(this.state.gameData.bindings).find((binding) => binding.selected)
   }
 }
 
-export default styled(GameBindingArea)`
-  margin-top: 2rem;
-`
+// We are interested in everything inside of the bindings slice of the state
+const mapStateToProps = (state) => ({ ...state.bindings })
+
+// Shortest way to do `bindActionCreators` is simply passing `key:value` pair.
+// Put on const to make it more recognizable.
+// https://stackoverflow.com/questions/34458261/how-to-get-simple-dispatch-from-this-props-using-connect-w-redux
+const mapDispatchToProps = { fetchGameData }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GameBindingsContainer)

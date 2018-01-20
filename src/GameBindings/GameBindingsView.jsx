@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import isEmpty from 'lodash/isEmpty'
 
-import Error from 'src/generic/Error'
+import Error from 'src/genericComponents/Error'
 import Binding from './Binding'
 
 const GameBindingsComponent = ({ className, loading, gameData, error, onSelectBinding }) => {
