@@ -33,6 +33,9 @@ export default {
   init: (dispatcher) => {
     dispatch = dispatcher
 
+    // TODO: Currently this only supports 1 keyDown at the same time
+    // More reading: https://stackoverflow.com/questions/5203407/javascript-multiple-keys-pressed-at-once
+    // Or use (a modified version of) https://github.com/publicJorn/Keypress
     document.body.addEventListener('keydown', handleKeyDown)
     document.body.addEventListener('keyup', handleKeyUp)
   },

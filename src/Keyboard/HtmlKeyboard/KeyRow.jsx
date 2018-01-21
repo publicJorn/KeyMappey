@@ -8,6 +8,8 @@ const KeyRow = ({ className, keys }) => (
     {keys.map((key, i) => {
       // This allows us to use simple arrays in keyboard config
       key = (typeof key === 'string') ? { label: key } : key
+
+      // Extract label so we can prepend it on key prop
       const { label, ...rest } = key
       return <Key key={`${label}-${i}`} label={label} {...rest} />
     })}

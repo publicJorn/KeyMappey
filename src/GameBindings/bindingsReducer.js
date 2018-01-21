@@ -9,13 +9,13 @@ import {
 import createReducer from 'src/utils/createReducer'
 import normalize from './normalizeGameData'
 
-const defaultBindingSlice = {
+const defaultBindingState = {
   fetching: false,
   error: '',
   gameData: null
 }
 
-export default createReducer(defaultBindingSlice, {
+export default createReducer(defaultBindingState, {
   [FETCH_BINDINGS] (state, action) {
     return {
       ...state,
