@@ -19,7 +19,7 @@ class GameBindingArea extends Component {
 
     return (
       <div className={className}>
-        <h2>Map your key bindings:</h2>
+        <h2>Define your key bindings:</h2>
 
         <select onChange={this.onSelectGame.bind(this)} defaultValue={this.state.game}>
           <option value='' disabled>Select game</option>
