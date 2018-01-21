@@ -1,6 +1,10 @@
-# Simple project with webpack template
+# KeyMappey
 
-Simply run `npm install` or `yarn install` to download dependencies.
+A tool that lets you create a quick reference of your game's key bindings.
+
+## Play around with the source code!
+
+`npm install` or `yarn install` to download dependencies.
 
 `npm run start` or `yarn start` to develop.
 
