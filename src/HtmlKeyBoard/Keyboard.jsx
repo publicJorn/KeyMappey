@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import HtmlKeyboard from './HtmlKeyBoard/HtmlKeyBoard'
+import HtmlKeyboard from './HtmlKeyBoard'
 
 // TODO: further develop JSON structure for different layouts & multi-lang setup
 // Add keyboard sections with props: XY (top left), angle, justify-content (for flexbox filling)

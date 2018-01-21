@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import KeyBoard from './KeyBoard/KeyBoard'
+import KeyBoard from './HtmlKeyBoard/KeyBoard'
 import BindingSection from './BindingSection/BindingSection'
 import keyPress from './utils/keyPress'
 
