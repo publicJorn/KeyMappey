@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import HtmlKeyBoard from './HtmlKeyBoard/KeyBoard'
+import KeyBoard from './KeyBoard/KeyBoard'
 import BindingSection from './BindingSection/BindingSection'
 import keyPress from './utils/keyPress'
 
@@ -19,7 +19,7 @@ export default class extends Component {
     return (
       <div className={className}>
         <h1>KeyMappey</h1>
-        <HtmlKeyBoard />
+        <KeyBoard />
         <BindingSection />
       </div>
     )

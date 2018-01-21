@@ -1,9 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import { connect } from 'react-redux'
 
-import KeyRow from './KeyRow'
-
-// TODO: Split redux logic
+import HtmlKeyboard from './HtmlKeyBoard/HtmlKeyBoard'
 
 // TODO: further develop JSON structure for different layouts & multi-lang setup
 // Add keyboard sections with props: XY (top left), angle, justify-content (for flexbox filling)
@@ -20,17 +18,4 @@ const rows = [
   ]
 ]
 
-const KeyBoard = ({ className }) => (
-  <div className={className}>
-    {rows.map((row, i) => <KeyRow key={`row${i}`} keys={row} />)}
-  </div>
-)
-
-export default styled(KeyBoard)`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 800px;
-  height: 250px;
-  margin: 0 auto;
-`
+export default () => <HtmlKeyboard rows={rows} />
