@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunk from 'redux-thunk'
 
 import bindings from './GameBindings/bindingsReducer'
-import keyboard from './HtmlKeyboard/keyboardReducer'
+import keyboard from './Keyboard/keyboardReducer'
 
 const rootReducer = combineReducers({
   bindings,

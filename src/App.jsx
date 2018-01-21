@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Keyboard from './HtmlKeyboard/KeyBoard'
+import Keyboard from './Keyboard/KeyBoard'
 import BindingSection from './BindingSection/BindingSection'
 
 export default class extends Component {
