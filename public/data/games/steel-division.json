@@ -3,58 +3,58 @@
   "bindingSections": [
     {
       "name": "general",
-      "bindings": {
-        "0": {
+      "bindings": [
+        {
           "longName": "Move camera up",
           "shortName": "Cam up",
           "defaultKey": "w"
         },
-        "1": {
+        {
           "longName": "Move camera down",
           "shortName": "Cam down",
           "defaultKey": "s"
         },
-        "2": {
+        {
           "longName": "Move camera left",
           "shortName": "Cam left",
           "defaultKey": "a"
         },
-        "3": {
+        {
           "longName": "Move camera right",
           "shortName": "Cam right",
           "defaultKey": "d"
         },
-        "4": {
+        {
           "longName": "Deploy menu",
           "shortName": "Deploy",
           "defaultKey": "~"
         },
-        "5": {
+        {
           "longName": "Attack move",
           "shortName": "Attack",
           "defaultKey": "q"
         },
-        "6": {
+        {
           "longName": "Reverse move",
           "shortName": "Reverse",
           "defaultKey": "j"
         },
-        "7": {
+        {
           "longName": "Stop unit",
           "shortName": "Stop",
           "defaultKey": "e"
         },
-        "8": {
+        {
           "longName": "Move fast",
           "shortName": "Fast",
           "defaultKey": "f"
         },
-        "9": {
+        {
           "longName": "Fire at position",
           "shortName": "Fire pos",
           "defaultKey": "t"
         }
-      }
+      ]
     }
   ]
 }

@@ -1,11 +1,14 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const packageString = require('./package.json')
+const pkg = JSON.parse(JSON.stringify(packageString))
 
 module.exports = {
   entry: './src/index.js',
 
   output: {
-    filename: 'dist/project.js'
+    path: path.join(__dirname, 'docs'),
+    filename: 'project.js'
   },
 
   devtool: 'inline-source-map',
@@ -31,7 +34,10 @@ module.exports = {
     ]
   },
 
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({
+    title: pkg.name,
+    favicon: `public/img/favicon-32x32.png`
+  })],
 
   resolve: {
     alias: {
@@ -41,7 +47,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: [path.join(__dirname, 'data')],
+    contentBase: [path.join(__dirname, 'public')],
     port: 3000
   }
 }
