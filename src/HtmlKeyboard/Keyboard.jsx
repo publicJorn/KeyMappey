@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import HtmlKeyboard from './HtmlKeyBoard'
+import keyPress from './keyPress'
+import HtmlKeyboard from './HtmlKeyboard'
 
 // TODO: further develop JSON structure for different layouts & multi-lang setup
 // Add keyboard sections with props: XY (top left), angle, justify-content (for flexbox filling)
@@ -18,4 +19,18 @@ const rows = [
   ]
 ]
 
-export default () => <HtmlKeyboard rows={rows} />
+class Keyboard extends Component {
+  componentDidMount () {
+    keyPress.init(this.props.dispatch)
+  }
+
+  componentWillUnmount () {
+    keyPress.destroy()
+  }
+
+  render () {
+    return <HtmlKeyboard rows={rows} />
+  }
+}
+
+export default connect()(Keyboard)

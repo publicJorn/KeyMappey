@@ -1,3 +1,10 @@
+import {
+  keyDown as keyDownAction,
+  keyUp as keyUpAction
+} from './keyboardActions'
+
+let dispatch
+
 const pressed = []
 const isPressed = (key) => pressed.some((k) => pressed.some((k) => k.a === key.a))
 const pressedKeyId = (key) =>
@@ -12,18 +19,20 @@ function handleKeyDown (evt) {
   const key = keyData(evt)
   if (!isPressed(key)) {
     pressed.push(key)
-    console.log('down', key)
+    dispatch(keyDownAction(key))
   }
 }
 
 function handleKeyUp (evt) {
   const key = keyData(evt)
   pressed.splice(pressedKeyId(key), 1)
-  console.log('up', key)
+  dispatch(keyUpAction(key))
 }
 
 export default {
-  init: () => {
+  init: (dispatcher) => {
+    dispatch = dispatcher
+
     document.body.addEventListener('keydown', handleKeyDown)
     document.body.addEventListener('keyup', handleKeyUp)
   },
