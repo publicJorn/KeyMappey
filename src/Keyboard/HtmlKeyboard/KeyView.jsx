@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Key = ({ className, label }) => (
@@ -10,19 +9,6 @@ const Key = ({ className, label }) => (
 
 const calcFlex = ({ size }) =>
   (size === 'auto') ? '1 1 auto' : `${size || 1} 1 0`
-
-Key.propTypes = {
-  label: PropTypes.string.isRequired,
-  location: PropTypes.number,
-  size: PropTypes.number,
-  down: PropTypes.bool
-}
-
-Key.defaultProps = {
-  location: 0,
-  size: 1,
-  down: false
-}
 
 export default styled(Key)`
   position: relative;

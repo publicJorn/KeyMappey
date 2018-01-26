@@ -5,7 +5,7 @@ import KeyRow from './KeyRow'
 
 const KeyBoard = ({ className, rows }) => (
   <div className={className}>
-    {rows.map((row, i) => <KeyRow key={`row${i}`} keys={row} />)}
+    {rows.map((keyIds, i) => <KeyRow key={`row${i}`} keyIds={keyIds} />)}
   </div>
 )
 

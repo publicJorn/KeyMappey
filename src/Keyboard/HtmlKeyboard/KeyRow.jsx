@@ -3,15 +3,11 @@ import styled from 'styled-components'
 
 import Key from './Key'
 
-const KeyRow = ({ className, keys }) => (
+const KeyRow = ({ className, keyIds }) => (
   <div className={className}>
-    {keys.map((key, i) => {
-      // This allows us to use simple arrays in keyboard config
-      key = (typeof key === 'string') ? { label: key } : key
-
+    {keyIds.map((keyId) => {
       // Extract label so we can prepend it on key prop
-      const { label, ...rest } = key
-      return <Key key={`${label}-${i}`} label={label} {...rest} />
+      return <Key key={keyId} keyId={keyId} />
     })}
   </div>
 )

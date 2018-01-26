@@ -1,0 +1,74 @@
+{
+  "rows": [
+    [
+      { "label": "~" },
+      { "label": "1" },
+      { "label": "2" },
+      { "label": "3" },
+      { "label": "4" },
+      { "label": "5" },
+      { "label": "6" },
+      { "label": "7" },
+      { "label": "8" },
+      { "label": "9" },
+      { "label": "0" },
+      { "label": "-" },
+      { "label": "=" },
+      { "label": "delete", "size": 1.5 }
+    ],
+    [
+      { "label": "tab", "size": 1.5 },
+      { "label": "Q" },
+      { "label": "W" },
+      { "label": "E" },
+      { "label": "R" },
+      { "label": "T" },
+      { "label": "Y" },
+      { "label": "U" },
+      { "label": "I" },
+      { "label": "O" },
+      { "label": "P" },
+      { "label": "[" },
+      { "label": "]" },
+      { "label": "\\" }
+    ],
+    [
+      { "label": "capslock", "size": 2 },
+      { "label": "A" },
+      { "label": "S" },
+      { "label": "D" },
+      { "label": "F" },
+      { "label": "G" },
+      { "label": "H" },
+      { "label": "J" },
+      { "label": "K" },
+      { "label": "L" },
+      { "label": ";" },
+      { "label": "'" },
+      { "label": "enter", "size": 2 }
+    ],
+    [
+      { "label": "shift", "location": 1, "size": 2.5 },
+      { "label": "Z" },
+      { "label": "X" },
+      { "label": "C" },
+      { "label": "V" },
+      { "label": "B" },
+      { "label": "N" },
+      { "label": "M" },
+      { "label": "," },
+      { "label": "." },
+      { "label": "/" },
+      { "label": "shift", "location": 2, "size": 2.5 }
+    ],
+    [
+      { "label": "ctrl", "location": 1 },
+      { "label": "meta", "location": 1 },
+      { "label": "alt", "location": 1 },
+      { "label": "space", "size": 6 },
+      { "label": "alt", "location": 2 },
+      { "label": "meta", "location": 2 },
+      { "label": "ctrl", "location": 2 }
+    ]
+  ]
+}
