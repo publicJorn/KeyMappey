@@ -2,7 +2,11 @@ import { normalize, schema } from 'normalizr'
 import map from 'lodash/map'
 
 const keySchema = new schema.Entity('keys', {}, {
-  idAttribute: (key) => `k${key.label}${key.location || 0}`
+  idAttribute: (key) => {
+    const label = key.label.toLowerCase()
+    const location = key.location || 0
+    return `k${label}${location}`
+  }
 })
 
 const rowSchema = new schema.Entity('rows', {

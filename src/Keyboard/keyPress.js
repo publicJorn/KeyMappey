@@ -11,11 +11,13 @@ const pressedKeyId = (key) =>
   pressed.findIndex((k) => k.key === key.key && k.location === key.location)
 
 const keyData = (evt) => ({
-  key: evt.key,
+  key: evt.key.toLowerCase(),
   location: evt.location
 })
 
 function handleKeyDown (evt) {
+  evt.preventDefault()
+
   const key = keyData(evt)
   if (!isPressed(key)) {
     pressed.push(key)
@@ -24,6 +26,8 @@ function handleKeyDown (evt) {
 }
 
 function handleKeyUp (evt) {
+  evt.preventDefault()
+
   const key = keyData(evt)
   pressed.splice(pressedKeyId(key), 1)
   dispatch(keyUpAction(key))

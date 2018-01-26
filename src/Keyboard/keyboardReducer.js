@@ -14,30 +14,33 @@ const defaultKeyboardState = {
   keys: []
 }
 
+const toggleDown = (state, id, down) => {
+  if (!state.keys[id]) {
+    console.warn(`Key with id '${id}' is not found in store.`)
+    return {}
+  }
+
+  return {
+    keys: {
+      [id]: {
+        down: { $set: down }
+      }
+    }
+  }
+}
+
 export default createReducer(defaultKeyboardState, {
   [REGISTER_KEYBOARD] (state, { keyboard }) {
     return { ...normalize(keyboard) }
   },
 
   [KEY_DOWN] (state, action) {
-    const operation = {
-      keysDown: { $push: [action.key] }
-    }
-
-    return update(state, operation)
+    const { key, location } = action.key
+    return update(state, toggleDown(state, `k${key}${location}`, true))
   },
 
   [KEY_UP] (state, action) {
-    const idx = state.keysDown.findIndex((key) => isEqual(key, action.key))
-    const keysDown = state.keysDown
-
-    if (idx > -1) {
-      keysDown.splice(idx, 1)
-    }
-
-    return {
-      ...state,
-      keysDown
-    }
+    const { key, location } = action.key
+    return update(state, toggleDown(state, `k${key}${location}`, false))
   }
 })

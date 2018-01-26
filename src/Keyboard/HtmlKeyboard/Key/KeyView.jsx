@@ -16,7 +16,7 @@ export default styled(Key)`
   border: 1px solid #999;
   border-radius: 3px;
   margin: 0 5px 5px 0;
-  background-color: #eee;
+  background-color: ${props => props.down ? '#fff' : '#eee'};
 
   .label {
     position: absolute;
@@ -24,6 +24,6 @@ export default styled(Key)`
     left: 3px;
     max-width: calc(100% - 6px);
     font-size: .85rem;
-    color: #666;
+    color: ${props => props.down ? 'hotpink' : '#666'};
   }
 `
