@@ -1,6 +1,6 @@
 # KeyMappey
 
-A tool that lets you create a quick reference of your game's controls.
+A tool that helps you create a quick reference of your game's controls.
 
 ## Play around with the source code!
 

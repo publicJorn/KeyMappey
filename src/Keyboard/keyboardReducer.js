@@ -1,5 +1,4 @@
 import update from 'immutability-helper'
-import isEqual from 'lodash/isEqual'
 
 import {
   REGISTER_KEYBOARD,

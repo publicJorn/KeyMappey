@@ -27,3 +27,4 @@ node_modules/
 # Editor files #
 ################
 .vscode/
+.history/
