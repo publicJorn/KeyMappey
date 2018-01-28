@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import classNames from 'classnames'
 
@@ -12,6 +11,7 @@ const Key = styled.td`
   width: 50px;
   padding: 0;
   text-align: center;
+  font-size: 0.7rem;
   border: 1px solid #ccc;
 
   .selected > & {
@@ -32,20 +32,6 @@ const Binding = ({ className, longName, boundKey, selected, selectBinding }) => 
       <Key>{boundKey}</Key>
     </tr>
   )
-}
-
-Binding.propTypes = {
-  longName: PropTypes.string.isRequired,
-  shortName: PropTypes.string.isRequired,
-  defaultKey: PropTypes.string,
-  boundKey: PropTypes.string,
-  selected: PropTypes.bool
-}
-
-Binding.defaultProps = {
-  defaultKey: '',
-  boundKey: '',
-  selected: false
 }
 
 export default styled(Binding)`
