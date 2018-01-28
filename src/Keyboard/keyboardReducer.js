@@ -5,6 +5,7 @@ import {
   KEY_DOWN,
   KEY_UP
 } from './keyboardActions'
+import { MATCH_KEY_BINDING } from 'src/GameBindings/bindingsActions'
 import createReducer from 'src/utils/createReducer'
 import normalize from './normalizeKeyboardData'
 
@@ -41,5 +42,17 @@ export default createReducer(defaultKeyboardState, {
   [KEY_UP] (state, action) {
     const { key, location } = action.key
     return update(state, toggleDown(state, `k${key}${location}`, false))
+  },
+
+  [MATCH_KEY_BINDING] (state, action) {
+    const { key, binding } = action
+    const { shortName } = binding
+    const { uid } = key
+
+    const operation = {
+      keys: { [uid]: { boundActionName: { $set: shortName } } }
+    }
+
+    return update(state, operation)
   }
 })

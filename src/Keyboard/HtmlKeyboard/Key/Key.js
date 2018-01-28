@@ -7,13 +7,15 @@ KeyView.propTypes = {
   label: PropTypes.string.isRequired,
   location: PropTypes.number,
   size: PropTypes.number,
-  isDown: PropTypes.bool
+  isDown: PropTypes.bool,
+  boundActionName: PropTypes.string
 }
 
 KeyView.defaultProps = {
   location: 0,
   size: 1,
-  isDown: false
+  isDown: false,
+  boundActionName: ''
 }
 
 const mapStateToProps = (state, ownProps) => ({

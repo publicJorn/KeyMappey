@@ -11,7 +11,7 @@ const Key = styled.td`
   width: 50px;
   padding: 0;
   text-align: center;
-  font-size: 0.7rem;
+  font-size: .7rem;
   border: 1px solid #ccc;
 
   .selected > & {
