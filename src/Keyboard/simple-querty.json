@@ -14,7 +14,7 @@
       { "label": "0" },
       { "label": "-" },
       { "label": "=" },
-      { "label": "delete", "size": 1.5 }
+      { "label": "backspace", "size": 1.5 }
     ],
     [
       { "label": "tab", "size": 1.5 },
@@ -62,13 +62,13 @@
       { "label": "shift", "location": 2, "size": 2.5 }
     ],
     [
-      { "label": "ctrl", "location": 1 },
+      { "label": "control", "location": 1 },
       { "label": "meta", "location": 1 },
       { "label": "alt", "location": 1 },
       { "label": "space", "size": 6 },
       { "label": "alt", "location": 2 },
       { "label": "meta", "location": 2 },
-      { "label": "ctrl", "location": 2 }
+      { "label": "control", "location": 2 }
     ]
   ]
 }
