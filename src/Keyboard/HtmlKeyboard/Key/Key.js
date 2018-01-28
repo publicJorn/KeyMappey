@@ -10,13 +10,13 @@ Key.propTypes = {
   label: PropTypes.string.isRequired,
   location: PropTypes.number,
   size: PropTypes.number,
-  down: PropTypes.bool
+  isDown: PropTypes.bool
 }
 
 Key.defaultProps = {
   location: 0,
   size: 1,
-  down: false
+  isDown: false
 }
 
 const mapStateToProps = (state, ownProps) => ({

@@ -10,10 +10,10 @@ import normalize from './normalizeKeyboardData'
 
 const defaultKeyboardState = {
   rows: [],
-  keys: []
+  keys: {}
 }
 
-const toggleDown = (state, id, down) => {
+const toggleDown = (state, id, isDown) => {
   if (!state.keys[id]) {
     console.warn(`Key with id '${id}' is not found in store.`)
     return {}
@@ -22,7 +22,7 @@ const toggleDown = (state, id, down) => {
   return {
     keys: {
       [id]: {
-        down: { $set: down }
+        isDown: { $set: isDown }
       }
     }
   }
