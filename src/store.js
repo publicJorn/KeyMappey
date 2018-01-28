@@ -9,9 +9,13 @@ const rootReducer = combineReducers({
   keyboard
 })
 
-const enhancers = compose(
-  applyMiddleware(thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const composeEnhancers = (
+  process.env.NODE_ENV !== 'production' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+) ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose
+
+const enhancers = composeEnhancers(
+  applyMiddleware(thunk)
 )
 
 export default () => createStore(
