@@ -4,7 +4,8 @@ import {
   FETCH_BINDINGS,
   FETCH_BINDINGS_ERROR,
   BINDINGS_FETCHED,
-  SELECT_BINDING
+  SELECT_BINDING,
+  MATCH_KEY_BINDING
 } from './bindingsActions'
 import { filterSelectedBinding } from './bindingSelectors'
 import createReducer from 'src/utils/createReducer'
@@ -53,6 +54,18 @@ export default createReducer(defaultBindingState, {
     if (previouslySelectedBinding) {
       const prevLongName = previouslySelectedBinding.longName
       operation.gameData.bindings[prevLongName] = { $unset: ['selected'] }
+    }
+
+    return update(state, operation)
+  },
+
+  [MATCH_KEY_BINDING] (state, action) {
+    const { key, binding } = action
+    const { longName } = binding
+    const { label } = key
+
+    const operation = {
+      gameData: { bindings: { [longName]: { boundKey: { $set: label } } } }
     }
 
     return update(state, operation)

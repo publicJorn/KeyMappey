@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import GameBindingsView from './GameBindingsView'
-import { fetchGameData } from './bindingsActions'
+import { fetchGameData, matchKeyAndBinding } from './bindingsActions'
+import { getBindingAndKeyMatch } from './bindingSelectors'
 
 class GameBindingsContainer extends Component {
   componentDidMount () {
@@ -12,9 +13,10 @@ class GameBindingsContainer extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.game !== this.props.game) {
-      this.props.fetchGameData(nextProps.game)
-    }
+    const { game, bindingAndKeyMatch } = this.props
+
+    if (nextProps.game !== game) this.props.fetchGameData(nextProps.game)
+    if (bindingAndKeyMatch) this.props.matchKeyAndBinding(bindingAndKeyMatch)
   }
 
   render () {
@@ -23,13 +25,13 @@ class GameBindingsContainer extends Component {
   }
 }
 
-// We are interested in everything inside of the bindings slice of the state
-const mapStateToProps = (state) => ({ ...state.bindings })
+const mapStateToProps = (state, ownProps) => ({
+  // Everything in the bindings slice of the state & check if we have a match
+  ...state.bindings,
+  bindingAndKeyMatch: getBindingAndKeyMatch(state)
+})
 
-// Shortest way to do `bindActionCreators` is simply passing `key:value` pair.
-// Put on const to make it more recognizable.
-// https://stackoverflow.com/questions/34458261/how-to-get-simple-dispatch-from-this-props-using-connect-w-redux
-const mapDispatchToProps = { fetchGameData }
+const mapDispatchToProps = { fetchGameData, matchKeyAndBinding }
 
 export default connect(
   mapStateToProps,
