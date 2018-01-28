@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const packageString = require('./package.json')
 const pkg = JSON.parse(JSON.stringify(packageString))
 
@@ -34,10 +35,13 @@ module.exports = {
     ]
   },
 
-  plugins: [new HtmlWebpackPlugin({
-    title: pkg.name,
-    favicon: `public/img/favicon-32x32.png`
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: pkg.name,
+      favicon: `public/img/favicon-32x32.png`
+    }),
+    new CaseSensitivePathsPlugin()
+  ],
 
   resolve: {
     alias: {
