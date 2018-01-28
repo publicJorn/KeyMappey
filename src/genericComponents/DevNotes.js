@@ -8,6 +8,7 @@ const DevNotes = styled.div`
   left: 0;
   width: 100%;
   text-align: center;
+  font-size: .875rem;
   color: ${styles.inactive};
 `
 
@@ -24,5 +25,6 @@ export default () => <DevNotes>
   <Center>
     This app is in early development,<br />
     is incomplete and will probably have <Link href='https://github.com/publicJorn/KeyMappey/issues'>bugs</Link>.<br />
+    Feel free to check out the <Link href='https://github.com/publicJorn/KeyMappey'>source code</Link>!
   </Center>
 </DevNotes>
