@@ -1,18 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import styles from 'src/styles'
+
 const Label = styled.span`
   position: absolute;
   top: 2px;
   left: 3px;
   max-width: calc(100% - 6px);
   font-size: 12px;
-  color: ${props => props.isDown ? '#00C000' : '#666'};
+  color: ${props => props.isDown ? styles.selection : '#666'};
 `
 
 const BoundAction = styled.span`
   font-size: 10px;
-  color: #00C000;
+  color: ${styles.selection};
 `
 
 const Key = ({ className, label, isDown, boundActionName }) => (
@@ -28,7 +30,7 @@ const calcFlex = ({ size }) =>
 export default styled(Key)`
   position: relative;
   flex: ${calcFlex};
-  padding-top: 14px;
+  padding: 14px 1px 0;
   margin: 0 5px 5px 0;
   text-align: center;
   line-height: 11px;

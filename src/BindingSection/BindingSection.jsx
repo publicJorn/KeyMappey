@@ -10,16 +10,17 @@ class GameBindingArea extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      game: 'steel-division'
+      game: ''
     }
   }
 
   render () {
     const { className } = this.props
+    const welcomeText = (this.state.game === '') ? 'Choose a game' : 'Define your key bindings'
 
     return (
       <div className={className}>
-        <h2>Define your key bindings:</h2>
+        <h2>{welcomeText}:</h2>
 
         <select onChange={this.onSelectGame.bind(this)} defaultValue={this.state.game}>
           <option value='' disabled>Select game</option>

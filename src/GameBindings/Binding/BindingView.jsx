@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import classNames from 'classnames'
 
+import styles from 'src/styles'
+
 const Name = styled.td`
   padding: 0;
   min-width: 150px;
@@ -13,10 +15,10 @@ const KeyLabel = styled.td`
   text-align: center;
   font-size: .7rem;
   border: 1px solid #ccc;
-  color: #00C000;
+  color: ${styles.selection};
 
   .selected > & {
-    border-color: #00C000;
+    border-color: ${styles.selection};
   }
 `
 
@@ -57,6 +59,6 @@ export default styled(Binding)`
   cursor: pointer;
 
   &.selected {
-    color: #00C000;
+    color: ${styles.selection};
   }
 `
