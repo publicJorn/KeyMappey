@@ -7,12 +7,12 @@ const Label = styled.span`
   left: 3px;
   max-width: calc(100% - 6px);
   font-size: 12px;
-  color: ${props => props.isDown ? 'hotpink' : '#666'};
+  color: ${props => props.isDown ? '#00C000' : '#666'};
 `
 
 const BoundAction = styled.span`
   font-size: 10px;
-  color: green;
+  color: #00C000;
 `
 
 const Key = ({ className, label, isDown, boundActionName }) => (

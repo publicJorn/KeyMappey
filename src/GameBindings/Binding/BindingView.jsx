@@ -13,9 +13,10 @@ const Key = styled.td`
   text-align: center;
   font-size: .7rem;
   border: 1px solid #ccc;
+  color: #00C000;
 
   .selected > & {
-    border-color: hotpink;
+    border-color: #00C000;
   }
 `
 
@@ -39,6 +40,6 @@ export default styled(Binding)`
   cursor: pointer;
 
   &.selected {
-    color: hotpink;
+    color: #00C000;
   }
 `
