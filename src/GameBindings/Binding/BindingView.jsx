@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import classNames from 'classnames'
 
@@ -7,7 +7,7 @@ const Name = styled.td`
   min-width: 150px;
 `
 
-const Key = styled.td`
+const KeyLabel = styled.td`
   width: 50px;
   padding: 0;
   text-align: center;
@@ -20,19 +20,36 @@ const Key = styled.td`
   }
 `
 
-const Binding = ({ className, longName, boundKey, selected, selectBinding }) => {
-  const cn = classNames(className, { selected })
-  const handleClick = (evt) => {
-    evt.preventDefault()
-    selectBinding(longName)
+class Binding extends PureComponent {
+  constructor (props) {
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
   }
 
-  return (
-    <tr className={cn} onClick={handleClick}>
-      <Name>{longName}</Name>
-      <Key>{boundKey}</Key>
-    </tr>
-  )
+  componentWillReceiveProps (nextProps) {
+    const { boundKey, selected, longName } = this.props
+
+    if (selected && boundKey !== nextProps.boundKey) {
+      this.props.selectBinding(longName)
+    }
+  }
+
+  render () {
+    const { className, longName, boundKey, selected } = this.props
+    const cn = classNames(className, { selected })
+
+    return (
+      <tr className={cn} onClick={this.handleClick}>
+        <Name>{longName}</Name>
+        <KeyLabel>{boundKey}</KeyLabel>
+      </tr>
+    )
+  }
+
+  handleClick (evt) {
+    evt.preventDefault()
+    this.props.selectBinding(this.props.longName)
+  }
 }
 
 export default styled(Binding)`
