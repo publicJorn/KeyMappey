@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 import styled from 'styled-components'
 
 import styles from 'src/styles'
@@ -9,7 +10,11 @@ const Label = styled.span`
   left: 3px;
   max-width: calc(100% - 6px);
   font-size: 12px;
-  color: ${props => props.isDown ? styles.selection : '#666'};
+  color: #666;
+
+  .down > & {
+    color: ${styles.selection};
+  }
 `
 
 const BoundAction = styled.span`
@@ -18,7 +23,7 @@ const BoundAction = styled.span`
 `
 
 const Key = ({ className, label, isDown, boundActionName }) => (
-  <div className={className}>
+  <div className={classNames(className, { down: isDown })}>
     <Label isDown={isDown}>{label}</Label>
     <BoundAction>{boundActionName}</BoundAction>
   </div>
@@ -34,7 +39,11 @@ export default styled(Key)`
   margin: 0 5px 5px 0;
   text-align: center;
   line-height: 11px;
-  background-color: ${props => props.isDown ? '#fff' : '#eee'};
   border: 1px solid #999;
   border-radius: 3px;
+  background-color: #eee;
+
+  &.down {
+    background-color: #fff;
+  }
 `
