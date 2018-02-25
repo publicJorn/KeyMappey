@@ -24,10 +24,14 @@ module.exports = {
           options: {
             presets: [
               'babel-preset-env',
-              'react'
+              'react',
+              'stage-2' // For:
+              // - decorators (mobx)
+              // - transform-class-properties (mostly for mobx and because it's cool)
+              // - object-rest-spread
             ],
             plugins: [
-              'transform-object-rest-spread' // stage 3 @ jan 2018
+              'transform-decorators-legacy'
             ]
           }
         }
