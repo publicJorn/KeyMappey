@@ -7,14 +7,14 @@ const games = ['Steel division']
 
 // TODO: Cut up in multiple components & separate game list fetching logic
 class GameBindingArea extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       game: ''
     }
   }
 
-  render () {
+  render() {
     const { className } = this.props
     const welcomeText = (this.state.game === '') ? 'Choose a game' : 'Define your key bindings'
 
@@ -36,8 +36,8 @@ class GameBindingArea extends Component {
     )
   }
 
-  onSelectGame (evt) {
-    this.setState({ ...this.state, game: evt.target.value })
+  onSelectGame(evt) {
+    this.setState({ game: evt.target.value })
   }
 }
 

@@ -23,11 +23,11 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              'babel-preset-env',
-              'react'
+              '@babel/preset-env',
+              '@babel/preset-react'
             ],
             plugins: [
-              'transform-object-rest-spread' // stage 3 @ jan 2018
+              '@babel/plugin-proposal-object-rest-spread'
             ]
           }
         }

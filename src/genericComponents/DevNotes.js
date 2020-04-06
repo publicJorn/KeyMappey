@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import styles from 'src/styles'
+import styles from 'src/theme'
 
 const DevNotes = styled.div`
   position: absolute;

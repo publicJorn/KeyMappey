@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect'
-import { getPressedKey } from 'src/Keyboard/keyboardSelectors'
+// import { getPressedKey } from 'src/Keyboard/keyboardSelectors'
 
 const getBindings = (state) => {
   return (state.bindings.gameData) ? state.bindings.gameData.bindings : {}
@@ -16,12 +16,12 @@ export const filterSelectedBinding = (bindings) => {
 }
 
 export const getSelectedBinding = createSelector(
-  [ getBindings ],
+  [getBindings],
   (bindings) => filterSelectedBinding(bindings)
 )
 
 export const getBindingAndKeyMatch = createSelector(
-  [ getBindings, getPressedKey, getSelectedBinding ],
+  [getBindings, /*getPressedKey,*/ getSelectedBinding],
   (allBindings, key, binding) => {
     // TODO: After MVP show a nice warning for the user if key was already bound
     if (binding && key && !filterByBoundKeyLabel(allBindings, key.label)) {

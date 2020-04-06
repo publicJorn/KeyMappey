@@ -1,16 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import { injectGlobal } from 'styled-components'
+// import { Provider } from 'react-redux'
+import { createGlobalStyle } from 'styled-components'
 
-import createStore from './store'
+// import createStore from './store'
 import App from './App'
 
 const rootNode = document.createElement('div')
 rootNode.setAttribute('id', 'KeyMappey')
 document.body.appendChild(rootNode)
 
-injectGlobal`
+createGlobalStyle`
   * {
     box-sizing: border-box;
     font-family: arial;
@@ -25,8 +25,9 @@ injectGlobal`
  * That's why, for now, we are using Redux.
  */
 ReactDOM.render(
-  <Provider store={createStore()}>
-    <App />
-  </Provider>,
+  // <Provider store={createStore()}>
+  <App />
+  // </Provider >
+  ,
   document.getElementById('KeyMappey')
 )

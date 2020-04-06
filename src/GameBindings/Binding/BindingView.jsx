@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import classNames from 'classnames'
 
-import styles from 'src/styles'
+import styles from 'src/theme'
 
 const Name = styled.td`
   padding: 0;
@@ -23,12 +23,12 @@ const KeyLabel = styled.td`
 `
 
 class Binding extends PureComponent {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     const { boundKey, selected, longName } = this.props
 
     if (selected && boundKey !== nextProps.boundKey) {
@@ -36,7 +36,7 @@ class Binding extends PureComponent {
     }
   }
 
-  render () {
+  render() {
     const { className, longName, boundKey, selected } = this.props
     const cn = classNames(className, { selected })
 
@@ -48,7 +48,7 @@ class Binding extends PureComponent {
     )
   }
 
-  handleClick (evt) {
+  handleClick(evt) {
     evt.preventDefault()
     this.props.selectBinding(this.props.longName)
   }

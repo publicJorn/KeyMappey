@@ -6,11 +6,9 @@ A tool that helps you create a quick reference of your game's controls.
 
 ## Play around with the source code!
 
-`npm install` or `yarn install` to download dependencies.
-
-`npm run start` or `yarn start` to develop.
-
-`npm run build` or `yarn build` to create bundle file.
+- `npm install` to download dependencies  
+- `npm start` to develop  
+- `npm run build` to create bundle file
 
 ## Notes
 
@@ -32,3 +30,33 @@ And further down the line:
 
 - Per game: a parser that lets you read and write actual key config files from games.
 - Social / Sharing possibilities
+
+## Dev: detailed TODO
+
+1. restructure design svg to have a group for each button. This makes designing easier and rendering on change faster (only 1 key to change)
+1. add an empty area to design in each key that is used for action label
+1. use (already included) `svg-text-wrap` to wrap action label within container
+1. automate parsing of svg design with svgo
+
+# Docs
+
+## Design
+
+- Create svg with any vector based program
+- Layer structure:
+  ```
+   /design
+     (create whatever structure you need to apply design)
+   /keys
+     /key_Q
+       /key
+       /label
+       /bindarea
+    /key_W
+    ...etc
+  ```
+
+### Design tips
+
+- First create a single key with the above structure, you can copy from this
+- Design the buttons so that there's as much space within as possible, so there's room for binding names
