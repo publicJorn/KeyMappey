@@ -9,7 +9,7 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, 'docs'),
-    filename: 'project.js'
+    filename: 'project.js',
   },
 
   devtool: 'inline-source-map',
@@ -22,36 +22,34 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-react'
-            ],
+            presets: ['@babel/preset-env', '@babel/preset-react'],
             plugins: [
-              '@babel/plugin-proposal-object-rest-spread'
-            ]
-          }
-        }
-      }
-    ]
+              '@babel/plugin-proposal-object-rest-spread',
+              '@babel/plugin-proposal-class-properties',
+            ],
+          },
+        },
+      },
+    ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       title: pkg.name,
-      favicon: `public/img/favicon-32x32.png`
+      favicon: `public/img/favicon-32x32.png`,
     }),
-    new CaseSensitivePathsPlugin()
+    new CaseSensitivePathsPlugin(),
   ],
 
   resolve: {
     alias: {
-      src: path.join(__dirname, 'src')
+      src: path.join(__dirname, 'src'),
     },
-    extensions: ['.js', '.json', '.jsx']
+    extensions: ['.js', '.json', '.jsx'],
   },
 
   devServer: {
     contentBase: [path.join(__dirname, 'public')],
-    port: 3000
-  }
+    port: 3000,
+  },
 }

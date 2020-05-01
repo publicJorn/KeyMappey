@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import svgson from 'svgson'
 
 import { getAttr } from './utils'
 import G from './G'
 import KeyGroup from './KeyGroup'
+import RenderSVGSON from './RenderSVGSON'
 
 // TODO: auto build & inject -> pass through svgo. Default settings and:
 // - DO NOT cleanup ID's
@@ -72,13 +74,13 @@ const bindings = new Map([
   ['Label_W', { short: 'Up', long: 'Go forth and multiply' }],
 ])
 
-export default class SvgKeyboard extends Component {
+class SvgKeyboard extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       json: null,
       jsonError: '',
-      showDesign: true,
     }
   }
 
@@ -107,44 +109,44 @@ export default class SvgKeyboard extends Component {
   }
 
   render() {
-    const { json, jsonError, showDesign } = this.state
-    const { downKeys } = this.props
+    const { json, jsonError } = this.state
+    const { downKeys, showDesign } = this.props
 
     if (jsonError) return <p>{jsonError}</p>
     if (!json) return <p>Loading keyboard...</p>
 
     const { design, keys } = json.children
-    console.log(keys.children)
 
     return (
       <svg {...json.attributes}>
-        {/* {design && (
+        {design && (
           <G isVisible={showDesign} {...design.attributes}>
-            {design.children.map((path, i) => <Path key={i} path={path} />)}
+            <RenderSVGSON {...design} />
           </G>
-        )} */}
+        )}
 
-        <G {...keys.attributes}>
+        <G {...keys.attributes} id="keyboard">
           {keys.children.map((keyGroup) => (
             <KeyGroup
-              key={keyGroup.qwertyKey}
+              key={keyGroup.attributes.id}
               {...keyGroup}
               isDown={downKeys.includes(keyGroup.qwertyKey)}
             />
           ))}
         </G>
-
-        {/* <G {...labels.attributes}>
-          {labels.children.map(
-            (text) =>
-              <Text
-                key={text.attributes.id}
-                text={text}
-                isPressed={downKeys.includes(text.qwertyKey)}
-              />
-          )}
-        </G> */}
       </svg>
     )
   }
 }
+
+SvgKeyboard.propTypes = {
+  downKeys: PropTypes.arrayOf(PropTypes.string),
+  showDesign: PropTypes.bool,
+}
+
+SvgKeyboard.defaultProps = {
+  downKeys: [],
+  showDesign: true,
+}
+
+export default SvgKeyboard
