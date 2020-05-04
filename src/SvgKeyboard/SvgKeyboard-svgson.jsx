@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import svgson from 'svgson'
 
 import { getAttr } from './utils'
-import G from './G'
 import KeyGroup from './KeyGroup'
 import RenderSVGSON from './RenderSVGSON'
 
@@ -119,13 +118,13 @@ class SvgKeyboard extends Component {
 
     return (
       <svg {...json.attributes}>
-        {design && (
-          <G isVisible={showDesign} {...design.attributes}>
+        {design && showDesign && (
+          <g {...design.attributes} id="design">
             <RenderSVGSON {...design} />
-          </G>
+          </g>
         )}
 
-        <G {...keys.attributes} id="keyboard">
+        <g {...keys.attributes} id="keyboard">
           {keys.children.map((keyGroup) => (
             <KeyGroup
               key={keyGroup.attributes.id}
@@ -133,7 +132,7 @@ class SvgKeyboard extends Component {
               isDown={downKeys.includes(keyGroup.qwertyKey)}
             />
           ))}
-        </G>
+        </g>
       </svg>
     )
   }

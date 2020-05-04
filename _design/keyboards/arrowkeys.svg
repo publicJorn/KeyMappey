@@ -1,19 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 180 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-  <g id="Design" onmouseenter="javascript:alert('hovering')">
-    <path fill="#d4d4d4" d="M0 0h180v125H0z"/>
-  </g>
-  <g id="Keys">
-    <path id="Key_D" d="M169.339,114.051c0,0.277 -0.223,0.5 -0.5,0.5c0,0 -0.033,0 -0.09,0c-9.57,0 -37.764,0 -47.334,0c-0.057,0 -0.09,0 -0.09,0c-0.276,0 -0.5,-0.223 -0.5,-0.5c0,0 0,-0.033 0,-0.09c0,-9.57 0,-37.764 0,-47.334c0,-0.057 0,-0.09 0,-0.09c0,-0.277 0.224,-0.5 0.5,-0.5l47.514,0c0.277,0 0.5,0.223 0.5,0.5l0,47.514Z" style="fill:#da0000;fill-rule:nonzero;"/>
-    <path id="Key_C" d="M113.927,114.051c0,0.277 -0.223,0.5 -0.5,0.5c0,0 -0.033,0 -0.09,0c-9.57,0 -37.764,0 -47.334,0c-0.057,0 -0.09,0 -0.09,0c-0.276,0 -0.5,-0.223 -0.5,-0.5c0,0 0,-0.033 0,-0.09c0,-9.57 0,-37.764 0,-47.334c0,-0.057 0,-0.09 0,-0.09c0,-0.277 0.224,-0.5 0.5,-0.5l47.514,0c0.277,0 0.5,0.223 0.5,0.5l0,47.514Z" style="fill:#da0000;fill-rule:nonzero;"/>
-    <path id="Key_B" d="M58.514,114.051c0,0.277 -0.223,0.5 -0.5,0.5c0,0 -0.033,0 -0.09,0c-9.57,0 -37.764,0 -47.334,0c-0.057,0 -0.09,0 -0.09,0c-0.276,0 -0.5,-0.223 -0.5,-0.5c0,0 0,-0.033 0,-0.09c0,-9.57 0,-37.764 0,-47.334c0,-0.057 0,-0.09 0,-0.09c0,-0.277 0.224,-0.5 0.5,-0.5l47.514,0c0.277,0 0.5,0.223 0.5,0.5l0,47.514Z" style="fill:#da0000;fill-rule:nonzero;"/>
-    <path id="Key_A" d="M113.927,59.014c0,0.277 -0.223,0.5 -0.5,0.5c0,0 -0.033,0 -0.09,0c-9.57,0 -37.764,0 -47.334,0c-0.057,0 -0.09,0 -0.09,0c-0.276,0 -0.5,-0.223 -0.5,-0.5c0,0 0,-0.033 0,-0.09c0,-9.57 0,-37.764 0,-47.334c0,-0.057 0,-0.09 0,-0.09c0,-0.277 0.224,-0.5 0.5,-0.5l47.514,0c0.277,0 0.5,0.223 0.5,0.5l0,47.514Z" style="fill:#da0000;fill-rule:nonzero;"/>
-  </g>
-  <g id="Labels">
-    <text id="Label_D" x="124.874px" y="79.627px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:#fff;">D</text>
-    <text id="Label_C" x="70.261px" y="79.773px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:#fff;">C</text>
-    <text id="Label_B" x="14.121px" y="79.627px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:#fff;">B</text>
-    <text id="Label_A" x="70.431px" y="23.59px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:#fff;">A</text>
-  </g>
+<svg width="100%" height="100%" viewBox="0 0 180 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="design" transform="matrix(1.00369,0,0,1.0036,0,0)">
+        <rect x="0" y="0" width="179.339" height="124.551" style="fill:rgb(212,212,212);"/>
+        <g transform="matrix(0.996328,0,0,0.996408,1.30379,4.06023)">
+            <path d="M154.332,2.458L163.025,8.773L158.678,14.755L165.711,17.04L162.39,27.259L155.358,24.974L155.358,32.368L144.614,32.368L144.614,24.974L137.582,27.259L134.262,17.04L141.294,14.755L136.948,8.773L145.64,2.458L149.986,8.44L154.332,2.458Z" style="fill:rgb(212,212,212);stroke:rgb(0,202,0);stroke-width:3px;"/>
+        </g>
+        <g transform="matrix(0.996328,0,0,0.996408,0.479353,3.02943)">
+            <text x="132.341px" y="21.311px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:8px;fill:rgb(0,54,19);">publicJorn</text>
+        </g>
+    </g>
+    <g id="keys">
+        <g id="key_D">
+            <g id="key" transform="matrix(1,0,0,1,-867.67,-256.576)">
+                <path d="M1037.01,370.627C1037.01,370.904 1036.79,371.127 1036.51,371.127L988.995,371.127C988.719,371.127 988.495,370.904 988.495,370.627L988.495,323.113C988.495,322.836 988.719,322.613 988.995,322.613L1036.51,322.613C1036.79,322.613 1037.01,322.836 1037.01,323.113L1037.01,370.627Z" style="fill:rgb(218,0,0);fill-rule:nonzero;"/>
+            </g>
+            <g id="label" transform="matrix(1,0,0,1,107.026,3.00732)">
+                <text x="17.848px" y="76.62px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">D</text>
+            </g>
+        </g>
+        <g id="key_S">
+            <g id="key1" serif:id="key" transform="matrix(1,0,0,1,-867.67,-256.576)">
+                <path d="M981.597,370.627C981.597,370.904 981.374,371.127 981.097,371.127L933.583,371.127C933.307,371.127 933.083,370.904 933.083,370.627L933.083,323.113C933.083,322.836 933.307,322.613 933.583,322.613L981.097,322.613C981.374,322.613 981.597,322.836 981.597,323.113L981.597,370.627Z" style="fill:rgb(218,0,0);fill-rule:nonzero;"/>
+            </g>
+            <g id="label1" serif:id="label" transform="matrix(1,0,0,1,52.4124,3.15381)">
+                <text x="17.848px" y="76.62px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">S</text>
+            </g>
+        </g>
+        <g id="key_A">
+            <g id="key2" serif:id="key" transform="matrix(1,0,0,1,-867.67,-256.576)">
+                <path d="M926.184,370.627C926.184,370.904 925.961,371.127 925.684,371.127L878.17,371.127C877.894,371.127 877.67,370.904 877.67,370.627L877.67,323.113C877.67,322.836 877.894,322.613 878.17,322.613L925.684,322.613C925.961,322.613 926.184,322.836 926.184,323.113L926.184,370.627Z" style="fill:rgb(218,0,0);fill-rule:nonzero;"/>
+            </g>
+            <g id="label2" serif:id="label" transform="matrix(1,0,0,1,-2.83071,3.00732)">
+                <text x="17.848px" y="76.62px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">A</text>
+            </g>
+        </g>
+        <g id="key_W">
+            <g id="key3" serif:id="key" transform="matrix(1,0,0,1,-867.67,-255.576)">
+                <path d="M981.597,314.59C981.597,314.867 981.374,315.09 981.097,315.09L933.583,315.09C933.307,315.09 933.083,314.867 933.083,314.59L933.083,267.076C933.083,266.799 933.307,266.576 933.583,266.576L981.097,266.576C981.374,266.576 981.597,266.799 981.597,267.076L981.597,314.59Z" style="fill:rgb(218,0,0);fill-rule:nonzero;"/>
+            </g>
+            <g id="label3" serif:id="label" transform="matrix(1,0,0,1,52.5823,-53.0297)">
+                <text x="17.848px" y="76.62px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:12px;fill:white;">W</text>
+            </g>
+            <g id="bind" transform="matrix(1,0,0,1,19.1057,-1.15841)">
+                <text x="51px" y="43.574px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:10px;fill:white;">binding</text>
+                <text x="51px" y="53.901px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:10px;fill:white;">space</text>
+            </g>
+        </g>
+    </g>
 </svg>
