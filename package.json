@@ -23,7 +23,7 @@
     ]
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "classnames": "^2.2.5",
     "immutability-helper": "^2.6.2",
     "lodash": "^4.17.4",
